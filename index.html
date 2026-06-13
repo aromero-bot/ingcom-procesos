@@ -46,13 +46,13 @@
     width: 38px; height: 38px; background: var(--accent); border-radius: 9px;
     display: flex; align-items: center; justify-content: center; color: #fff; font-size: 18px;
   }
-  .logo h1 { font-size: 16px; font-weight: 700; line-height: 1.2; }
-  .logo p { font-size: 11px; color: var(--muted); margin-top: 2px; }
-  
+  .logo h1 { font-size: 18px; font-weight: 700; line-height: 1.2; }
+  .logo p { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
   .tabs { display: flex; flex-direction: column; gap: 8px; background: transparent; }
   .tab {
-    padding: 12px 16px; text-align: left; border: none; background: transparent;
-    border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px;
+    padding: 13px 16px; text-align: left; border: none; background: transparent;
+    border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 15.5px;
     font-weight: 500; color: var(--muted); cursor: pointer; transition: all 0.2s;
     display: flex; align-items: center; gap: 10px;
   }
@@ -94,8 +94,8 @@
   .pill-i { background: var(--accent-l); color: var(--accent); }
   .pill-c { background: var(--teal-l); color: var(--teal); }
   .pill-t { background: #fff1f2; color: #4f46e5; }
-  .sec-title { font-size: 22px; font-weight: 700; color: var(--text); }
-  .sec-sub { font-size: 13px; color: var(--muted); margin-top: 4px; }
+  .sec-title { font-size: 28px; font-weight: 700; color: var(--text); }
+  .sec-sub { font-size: 14px; color: var(--muted); margin-top: 6px; }
   
   svg { overflow: visible; }
   
@@ -160,6 +160,76 @@
   }
   .gdrive-icon.doc { background: #3b82f6; }
   .gdrive-desc { font-size: 13px; color: #5f6368; line-height: 1.5; }
+
+  /* Mini-tabla de vista previa (Desglose de Productos) */
+  .mock-table { width: 100%; height: 100%; border-collapse: collapse; font-size: 7px; color: #5f6368; table-layout: fixed; }
+  .mock-table th { background: #d2e3fc; color: #1967d2; font-weight: 700; border: 1px solid #c6d4ea; padding: 3px 2px; text-align: left; }
+  .mock-table td { border: 1px solid #e8eaed; padding: 3px 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .mock-table tbody tr:nth-child(even) td { background: #f8f9fa; }
+
+  /* === Vistas previas realistas tipo documento === */
+  .doc-paper { width: 100%; height: 100%; background: #fff; border: 1px solid #e3e6ea; padding: 6px; display: flex; flex-direction: column; gap: 3px; overflow: hidden; }
+  .doc-topbar { display: flex; align-items: center; gap: 4px; }
+  .doc-logo { width: 14px; height: 11px; border-radius: 2px; flex-shrink: 0; }
+  .doc-line { height: 3px; background: #e3e6ea; border-radius: 1px; }
+  .doc-banner { height: 13px; border-radius: 2px; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 0 3px; }
+  .doc-banner span { font-size: 5px; line-height: 1; color: #fff; font-weight: 700; letter-spacing: .2px; white-space: nowrap; }
+
+  /* Tabla genérica dentro del documento */
+  .doc-table { display: flex; flex-direction: column; border: 1px solid #d4d8dd; border-radius: 1px; }
+  .doc-tr { display: flex; }
+  .doc-tr > div { flex: 1; height: 8px; border-right: 1px solid #eceef1; border-bottom: 1px solid #eceef1; }
+  .doc-tr > div:last-child { border-right: none; }
+  .doc-tr:last-child > div { border-bottom: none; }
+  .doc-th > div { background: #eef2f7; }
+
+  /* Hoja de cálculo (Desglose de Productos) */
+  .doc-sheet { gap: 0; padding: 4px; }
+  .ss-row { display: flex; }
+  .ss-row > div { flex: 1; height: 7px; border-right: 1px solid #e6e8eb; border-bottom: 1px solid #eef0f2; }
+  .ss-row > div:last-child { border-right: none; }
+  .ss-head > div { height: 8px; }
+
+  /* Logo corporativo (rombo multicolor estilo Roland Print) */
+  .rp-logo { width: 13px; height: 13px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 1px; transform: rotate(45deg); flex-shrink: 0; }
+  .rp-logo i { display: block; }
+
+  /* Bandas y títulos pequeños del documento */
+  .doc-band { background: #d9dce0; text-align: center; font-size: 4.5px; font-weight: 700; color: #3c4043; padding: 1.5px 0; letter-spacing: .2px; line-height: 1; }
+  .doc-title-min { font-size: 7px; font-weight: 700; color: #3c4043; line-height: 1; }
+  .doc-minilbl { font-size: 4.5px; font-weight: 700; color: #5f6368; line-height: 1; }
+  .doc-codebox { font-size: 3.5px; color: #5f6368; border: 1px solid #d0d3d7; padding: 1px 2px; line-height: 1.1; white-space: nowrap; overflow: hidden; }
+
+  /* --- PESTAÑA SÍLABO DE CONCEPTOS --- */
+  #tab-syll {
+    display: none; padding: 40px 60px; overflow-y: auto; height: 100%; box-sizing: border-box; cursor: default;
+  }
+  .pill-s { background: #f0fdf4; color: #166534; }
+
+  /* Tipos de Enchufe Grid (Mini-Cards) */
+  .plug-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 15px; margin-bottom: 50px; }
+  .plug-card { background: #fff; border: 1px solid #eef2f7; border-radius: 8px; padding: 12px; text-align: center; }
+  .plug-img { width: 80px; height: 80px; background: #f8fafc; border-radius: 6px; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #cbd5e1; font-size: 32px; border: 1px dashed #e2e8f0; position: relative; }
+  .plug-img span { position: absolute; top: 5px; left: 8px; font-size: 10px; color: var(--accent); }
+  .plug-label { font-size: 13px; font-weight: 600; color: var(--text); }
+  .plug-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  /* Tarjetas de Conceptos */
+  .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+  .card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 20px; transition: all 0.2s; }
+  .card:hover { box-shadow: var(--shl); border-color: var(--accent); }
+  .card-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .card-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+  /* Tablas de Voltaje */
+  .data-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); margin-top: 20px; }
+  .data-table th { background: #f8fafc; padding: 12px 16px; text-align: left; font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; border-bottom: 2px solid var(--border); }
+  .data-table td { padding: 14px 16px; font-size: 13px; border-bottom: 1px solid #f1f3f4; color: var(--text); }
+  .data-table tr:last-child td { border-bottom: none; }
+  .badge { padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+  .b-blue { background: #e0f2fe; color: #0369a1; }
+  .b-green { background: #dcfce7; color: #166534; }
+  .formula { font-family: 'DM Mono', monospace; color: #1a2035; padding: 2px 6px; border-radius: 4px; font-size: 14px; }
 </style>
 </head>
 <body>
@@ -177,6 +247,7 @@
     <button class="tab active" onclick="switchTab('com',this)">📋 Evaluación (Comercial)</button>
     <button class="tab" onclick="switchTab('inge',this)">📐 Proyecto (Ejecución)</button>
     <button class="tab" onclick="switchTab('tpl',this)">📄 Galería de Plantillas</button>
+    <button class="tab" onclick="switchTab('syll',this)">📚 Sílabo de Conceptos</button>
   </nav>
 </aside>
 
@@ -220,7 +291,7 @@
             <p class="sec-sub">Desde la adjudicación hasta la instalación y cumplimiento final.</p>
           </div>
         </div>
-        <svg id="svg-inge" width="1700" height="1400"></svg>
+        <svg id="svg-inge" width="2100" height="1400"></svg>
       </div>
 
     </div>
@@ -241,90 +312,387 @@
     <div class="path-banner">
       <svg viewBox="0 0 24 24"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
       <span>
-        Ruta: <strong>Archivo</strong> <span class="path-arrow">▶</span> <strong>Nuevo</strong> <span class="path-arrow">▶</span> <strong>De la galería de plantillas</strong> <span class="path-arrow">▶</span> <strong>INROPRIN S.A.C</strong> <span class="path-arrow">▶</span> <strong>Informes y propuestas</strong>
+        Ruta en Google Sheets: <strong>Archivo</strong> <span class="path-arrow">▶</span> <strong>Nuevo</strong> <span class="path-arrow">▶</span> <strong>De la galería de plantillas</strong> <span class="path-arrow">▶</span> <strong>INROPRIN S.A.C</strong> <span class="path-arrow">▶</span> <strong>Informes y propuestas</strong>
       </span>
     </div>
 
     <div class="gdrive-grid">
-      <div class="gdrive-card">
-        <div class="gdrive-preview">
-          <div class="mock-doc">
-            <div class="mock-header"></div>
-            <div class="mock-row"><div class="mock-cell"></div><div class="mock-cell"></div><div class="mock-cell"></div></div>
-            <div class="mock-row"><div class="mock-cell"></div><div class="mock-cell"></div><div class="mock-cell c-blue"></div></div>
-            <div class="mock-row"><div class="mock-cell"></div><div class="mock-cell"></div><div class="mock-cell c-green"></div></div>
-            <div class="mock-row"><div class="mock-cell"></div><div class="mock-cell"></div><div class="mock-cell c-yellow"></div></div>
-          </div>
-        </div>
-        <div class="gdrive-info">
-          <div class="gdrive-title">
-            <div class="gdrive-icon">S</div>
-            Formato "Evaluación de Modelos Propuestos" - EMP
-          </div>
-          <div class="gdrive-desc">Plantilla para la evaluación de distintos modelos en base a características relevantes propias.</div>
-        </div>
-      </div>
 
+      <!-- FORMATO 01: CUADRO DE EVALUACIÓN TÉCNICA - CET -->
       <div class="gdrive-card">
         <div class="gdrive-preview">
-          <div class="mock-doc">
-            <div class="mock-header" style="width: 40%"></div>
-            <div class="mock-row"><div class="mock-cell c-blue"></div><div class="mock-cell"></div><div class="mock-cell"></div></div>
-            <div class="mock-row"><div class="mock-cell"></div><div class="mock-cell"></div><div class="mock-cell"></div></div>
-            <div class="mock-row"><div class="mock-cell"></div><div class="mock-cell c-green"></div><div class="mock-cell"></div></div>
-            <div class="mock-row"><div class="mock-cell"></div><div class="mock-cell"></div><div class="mock-cell"></div></div>
+          <div class="doc-paper" style="gap:2px;">
+            <div class="doc-topbar">
+              <div class="rp-logo"><i style="background:#e63946"></i><i style="background:#1d6fb8"></i><i style="background:#f4c20d"></i><i style="background:#43a047"></i></div>
+              <div class="doc-minilbl">PROYECTO</div>
+            </div>
+            <div style="display:flex; gap:2px;">
+              <div class="doc-band" style="flex:1;">REQUERIMIENTO</div>
+              <div class="doc-band" style="flex:1;">PROPUESTA</div>
+            </div>
+            <div class="doc-table">
+              <div class="doc-tr doc-th"><div style="flex:.5"></div><div style="flex:1.3"></div><div style="flex:.7"></div><div style="flex:1.3"></div><div style="flex:.8"></div></div>
+              <div class="doc-tr"><div style="flex:.5"></div><div style="flex:1.3"></div><div style="flex:.7; background:#b6d7a8"></div><div style="flex:1.3"></div><div style="flex:.8"></div></div>
+              <div class="doc-tr"><div style="flex:.5"></div><div style="flex:1.3"></div><div style="flex:.7; background:#b6d7a8"></div><div style="flex:1.3"></div><div style="flex:.8"></div></div>
+              <div class="doc-tr"><div style="flex:.5"></div><div style="flex:1.3"></div><div style="flex:.7; background:#ffe599"></div><div style="flex:1.3"></div><div style="flex:.8"></div></div>
+              <div class="doc-tr"><div style="flex:.5"></div><div style="flex:1.3"></div><div style="flex:.7; background:#ea9999"></div><div style="flex:1.3"></div><div style="flex:.8"></div></div>
+              <div class="doc-tr"><div style="flex:.5"></div><div style="flex:1.3"></div><div style="flex:.7; background:#b6d7a8"></div><div style="flex:1.3"></div><div style="flex:.8"></div></div>
+              <div class="doc-tr"><div style="flex:.5"></div><div style="flex:1.3"></div><div style="flex:.7; background:#ffe599"></div><div style="flex:1.3"></div><div style="flex:.8"></div></div>
+              <div class="doc-tr"><div style="flex:.5"></div><div style="flex:1.3"></div><div style="flex:.7"></div><div style="flex:1.3"></div><div style="flex:.8"></div></div>
+            </div>
           </div>
         </div>
         <div class="gdrive-info">
           <div class="gdrive-title">
             <div class="gdrive-icon">S</div>
-            Formato "Cuadro de Evaluación Técnica" - CET
+            Formato 01 "Cuadro de Evaluación Técnica" (CET)
           </div>
           <div class="gdrive-desc">Plantilla para la evaluación de distintos modelos en base a especificaciones técnicas definidas.</div>
         </div>
       </div>
 
+      <!-- FORMATO 02: CONSOLIDADO DE BIENES -->
       <div class="gdrive-card">
         <div class="gdrive-preview">
-          <div class="mock-doc">
-            <div class="mock-header" style="width: 80%; background:#d1d5db; height: 8px;"></div>
-            <div class="mock-header" style="width: 60%; background:#d1d5db; height: 8px;"></div>
-            <div style="height: 10px;"></div>
-            <div class="mock-row"><div class="mock-cell" style="background:#e5e7eb"></div></div>
-            <div class="mock-row"><div class="mock-cell" style="background:#e5e7eb"></div></div>
-            <div class="mock-row"><div class="mock-cell" style="background:#e5e7eb; width:80%; flex:none;"></div></div>
+          <div class="doc-paper doc-sheet" style="padding:6px;">
+            <div class="doc-title-min" style="margin-bottom:4px;">CONSOLIDADO DE BIENES</div>
+            <div class="ss-row ss-head">
+              <div style="flex:.35; background:#d4d8dd"></div><div style="flex:.5; background:#d4d8dd"></div><div style="flex:.6; background:#d4d8dd"></div><div style="flex:.5; background:#d4d8dd"></div><div style="flex:1.2; background:#d4d8dd"></div><div style="flex:.6; background:#d4d8dd"></div><div style="flex:.8; background:#c6cdd6"></div>
+            </div>
+            <div class="ss-row"><div style="flex:.35"></div><div style="flex:.5"></div><div style="flex:.6"></div><div style="flex:.5"></div><div style="flex:1.2"></div><div style="flex:.6"></div><div style="flex:.8"></div></div>
+            <div class="ss-row"><div style="flex:.35"></div><div style="flex:.5"></div><div style="flex:.6"></div><div style="flex:.5"></div><div style="flex:1.2"></div><div style="flex:.6"></div><div style="flex:.8"></div></div>
+            <div class="ss-row"><div style="flex:.35"></div><div style="flex:.5"></div><div style="flex:.6"></div><div style="flex:.5"></div><div style="flex:1.2"></div><div style="flex:.6"></div><div style="flex:.8"></div></div>
+            <div class="ss-row"><div style="flex:.35"></div><div style="flex:.5"></div><div style="flex:.6"></div><div style="flex:.5"></div><div style="flex:1.2"></div><div style="flex:.6"></div><div style="flex:.8"></div></div>
+            <div class="ss-row"><div style="flex:.35"></div><div style="flex:.5"></div><div style="flex:.6"></div><div style="flex:.5"></div><div style="flex:1.2"></div><div style="flex:.6"></div><div style="flex:.8"></div></div>
+            <div class="ss-row"><div style="flex:.35"></div><div style="flex:.5"></div><div style="flex:.6"></div><div style="flex:.5"></div><div style="flex:1.2"></div><div style="flex:.6"></div><div style="flex:.8"></div></div>
+            <div class="ss-row"><div style="flex:.35"></div><div style="flex:.5"></div><div style="flex:.6"></div><div style="flex:.5"></div><div style="flex:1.2"></div><div style="flex:.6"></div><div style="flex:.8"></div></div>
+            <div class="ss-row"><div style="flex:.35"></div><div style="flex:.5"></div><div style="flex:.6"></div><div style="flex:.5"></div><div style="flex:1.2"></div><div style="flex:.6"></div><div style="flex:.8"></div></div>
+            <div class="ss-row"><div style="flex:.35"></div><div style="flex:.5"></div><div style="flex:.6"></div><div style="flex:.5"></div><div style="flex:1.2"></div><div style="flex:.6"></div><div style="flex:.8"></div></div>
+            <div class="ss-row"><div style="flex:.35"></div><div style="flex:.5"></div><div style="flex:.6"></div><div style="flex:.5"></div><div style="flex:1.2"></div><div style="flex:.6"></div><div style="flex:.8"></div></div>
           </div>
         </div>
         <div class="gdrive-info">
           <div class="gdrive-title">
-            <div class="gdrive-icon doc">W</div>
-            Formato "Sustento de Cambio de EETT"
+            <div class="gdrive-icon">S</div>
+            Formato 02 "Consolidado de Bienes"
+          </div>
+          <div class="gdrive-desc">Plantilla para consolidar el proceso de validación técnica de un proyecto.</div>
+        </div>
+      </div>
+
+      <!-- FORMATO 03: DESGLOSE DE PRODUCTOS -->
+      <div class="gdrive-card">
+        <div class="gdrive-preview">
+          <div class="doc-paper doc-sheet" style="padding:6px;">
+            <div class="doc-title-min" style="margin-bottom:4px;">DESGLOSE DE EQUIPOS</div>
+            <div class="ss-row ss-head">
+              <div style="flex:.4; background:#d4d8dd"></div><div style="flex:.4; background:#d4d8dd"></div><div style="background:#d4d8dd"></div><div style="background:#d4d8dd"></div><div style="background:#d4d8dd"></div><div style="flex:1.7; background:#d4d8dd"></div><div style="flex:.5; background:#d4d8dd"></div><div style="flex:1.2; background:#c6cdd6"></div>
+            </div>
+            <div class="ss-row"><div style="flex:.4"></div><div style="flex:.4"></div><div></div><div></div><div></div><div style="flex:1.7"></div><div style="flex:.5"></div><div style="flex:1.2"></div></div>
+            <div class="ss-row"><div style="flex:.4"></div><div style="flex:.4"></div><div></div><div></div><div></div><div style="flex:1.7"></div><div style="flex:.5"></div><div style="flex:1.2"></div></div>
+            <div class="ss-row"><div style="flex:.4"></div><div style="flex:.4"></div><div></div><div></div><div></div><div style="flex:1.7"></div><div style="flex:.5"></div><div style="flex:1.2"></div></div>
+            <div class="ss-row"><div style="flex:.4"></div><div style="flex:.4"></div><div></div><div></div><div></div><div style="flex:1.7"></div><div style="flex:.5"></div><div style="flex:1.2"></div></div>
+            <div class="ss-row"><div style="flex:.4"></div><div style="flex:.4"></div><div></div><div></div><div></div><div style="flex:1.7"></div><div style="flex:.5"></div><div style="flex:1.2"></div></div>
+            <div class="ss-row"><div style="flex:.4"></div><div style="flex:.4"></div><div></div><div></div><div></div><div style="flex:1.7"></div><div style="flex:.5"></div><div style="flex:1.2"></div></div>
+            <div class="ss-row"><div style="flex:.4"></div><div style="flex:.4"></div><div></div><div></div><div></div><div style="flex:1.7"></div><div style="flex:.5"></div><div style="flex:1.2"></div></div>
+            <div class="ss-row"><div style="flex:.4"></div><div style="flex:.4"></div><div></div><div></div><div></div><div style="flex:1.7"></div><div style="flex:.5"></div><div style="flex:1.2"></div></div>
+            <div class="ss-row"><div style="flex:.4"></div><div style="flex:.4"></div><div></div><div></div><div></div><div style="flex:1.7"></div><div style="flex:.5"></div><div style="flex:1.2"></div></div>
+            <div class="ss-row"><div style="flex:.4"></div><div style="flex:.4"></div><div></div><div></div><div></div><div style="flex:1.7"></div><div style="flex:.5"></div><div style="flex:1.2"></div></div>
+            <div class="ss-row"><div style="flex:.4"></div><div style="flex:.4"></div><div></div><div></div><div></div><div style="flex:1.7"></div><div style="flex:.5"></div><div style="flex:1.2"></div></div>
+          </div>
+        </div>
+        <div class="gdrive-info">
+          <div class="gdrive-title">
+            <div class="gdrive-icon">S</div>
+            Formato 03 "Desglose de Productos"
+          </div>
+          <div class="gdrive-desc">Plantilla para detallar los productos y accesorios de un proyecto, organizados por ítem, descripción, marca y cantidad.</div>
+        </div>
+      </div>
+
+      <!-- FORMATO 04: SOLICITUD DE REQUERIMIENTO -->
+      <div class="gdrive-card">
+        <div class="gdrive-preview">
+          <div class="doc-paper" style="gap:3px; border:1.5px solid #2b2b2b;">
+            <div style="display:flex; align-items:center; gap:2px;">
+              <div style="display:flex; align-items:center; justify-content:center; padding:0 3px; border:1px solid #eaeaea; align-self:stretch;">
+                <div class="rp-logo"><i style="background:#e63946"></i><i style="background:#1d6fb8"></i><i style="background:#f4c20d"></i><i style="background:#43a047"></i></div>
+              </div>
+              <div class="doc-banner" style="flex:1; background:#8b1e1e; border-radius:0; height:16px;"><span>FORMATO DE SOLICITUD DE REQUERIMIENTOS</span></div>
+              <div style="display:flex; flex-direction:column; gap:1px; width:44px;">
+                <div class="doc-codebox">CÓDIGO</div>
+                <div class="doc-codebox">VERSIÓN</div>
+                <div class="doc-codebox">ÁREA</div>
+              </div>
+            </div>
+            <div class="doc-line" style="width:70%;"></div>
+            <div class="doc-line" style="width:70%;"></div>
+            <div class="doc-line" style="width:70%;"></div>
+            <div class="doc-table">
+              <div class="doc-tr doc-th"><div style="flex:.4"></div><div></div><div></div><div style="flex:1.5"></div><div></div><div></div></div>
+              <div class="doc-tr"><div style="flex:.4"></div><div></div><div></div><div style="flex:1.5"></div><div></div><div></div></div>
+              <div class="doc-tr"><div style="flex:.4"></div><div></div><div></div><div style="flex:1.5"></div><div></div><div></div></div>
+              <div class="doc-tr"><div style="flex:.4"></div><div></div><div></div><div style="flex:1.5"></div><div></div><div></div></div>
+              <div class="doc-tr"><div style="flex:.4"></div><div></div><div></div><div style="flex:1.5"></div><div></div><div></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="gdrive-info">
+          <div class="gdrive-title">
+            <div class="gdrive-icon">S</div>
+            Formato 04 "Solicitud de Requerimiento"
+          </div>
+          <div class="gdrive-desc">Plantilla para solicitar formalmente requerimientos de equipos, accesorios o insumos del proyecto.</div>
+        </div>
+      </div>
+
+      <!-- FORMATO 05: EVALUACIÓN DE MODELOS PROPUESTOS - EMP -->
+      <div class="gdrive-card">
+        <div class="gdrive-preview">
+          <div class="doc-paper" style="gap:2px;">
+            <div class="doc-topbar">
+              <div class="rp-logo"><i style="background:#e63946"></i><i style="background:#1d6fb8"></i><i style="background:#f4c20d"></i><i style="background:#43a047"></i></div>
+              <div class="doc-minilbl">PROYECTO</div>
+            </div>
+            <div style="display:flex; gap:2px;">
+              <div class="doc-band" style="flex:1;">REQUERIMIENTO</div>
+              <div class="doc-band" style="flex:1;">PROPUESTA</div>
+            </div>
+            <div class="doc-table">
+              <div class="doc-tr doc-th"><div style="flex:.5"></div><div style="flex:1.4"></div><div style="flex:1.4"></div><div style="flex:.9"></div></div>
+              <div class="doc-tr"><div style="flex:.5"></div><div style="flex:1.4"></div><div style="flex:1.4"></div><div style="flex:.9"></div></div>
+              <div class="doc-tr"><div style="flex:.5"></div><div style="flex:1.4"></div><div style="flex:1.4"></div><div style="flex:.9"></div></div>
+              <div class="doc-tr"><div style="flex:.5"></div><div style="flex:1.4"></div><div style="flex:1.4"></div><div style="flex:.9"></div></div>
+              <div class="doc-tr"><div style="flex:1; background:#d9dce0; font-size:4px; text-align:center; color:#3c4043; font-weight:700; line-height:8px;">ACCESORIOS</div></div>
+              <div class="doc-tr"><div style="flex:.5"></div><div style="flex:1.4"></div><div style="flex:1.4"></div><div style="flex:.9"></div></div>
+              <div class="doc-tr"><div style="flex:.5"></div><div style="flex:1.4"></div><div style="flex:1.4"></div><div style="flex:.9"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="gdrive-info">
+          <div class="gdrive-title">
+            <div class="gdrive-icon">S</div>
+            Formato 05 "Evaluación de Modelos Propuestos"
+          </div>
+          <div class="gdrive-desc">Plantilla para la evaluación de distintos modelos en base a características relevantes propias.</div>
+        </div>
+      </div>
+
+      <!-- FORMATO 06: SUSTENTO DE CAMBIO DE EETT -->
+      <div class="gdrive-card">
+        <div class="gdrive-preview">
+          <div class="doc-paper" style="gap:2px;">
+            <div class="doc-topbar" style="align-items:flex-start;">
+              <div class="rp-logo"><i style="background:#e63946"></i><i style="background:#1d6fb8"></i><i style="background:#f4c20d"></i><i style="background:#43a047"></i></div>
+              <div style="flex:1; display:flex; flex-direction:column; gap:2px; align-items:flex-end; padding-top:1px;">
+                <div class="doc-line" style="width:50%;"></div>
+                <div class="doc-line" style="width:50%;"></div>
+                <div class="doc-line" style="width:50%;"></div>
+              </div>
+            </div>
+            <div class="doc-band" style="border:1px solid #c4c8cd; background:#eceef1;">CODIGO - NOMBRE DEL EQUIPO</div>
+            <div style="display:flex; justify-content:space-around; padding:3px 0;">
+              <span style="font-size:4px; color:#9aa0a6;">Foto ref.</span>
+              <span style="font-size:4px; color:#9aa0a6;">Foto ref.</span>
+            </div>
+            <div class="doc-table">
+              <div class="doc-tr"><div style="flex:.4; background:#eef2f7;"></div><div style="flex:1.4; background:#eef2f7;"></div><div style="flex:1.4; background:#d9ead3;"></div></div>
+              <div class="doc-tr"><div style="flex:.4"></div><div style="flex:1.4"></div><div style="flex:1.4"></div></div>
+              <div class="doc-tr"><div style="flex:.4"></div><div style="flex:1.4"></div><div style="flex:1.4"></div></div>
+              <div class="doc-tr"><div style="flex:.4"></div><div style="flex:1.4"></div><div style="flex:1.4"></div></div>
+              <div class="doc-tr"><div style="flex:.4"></div><div style="flex:1.4"></div><div style="flex:1.4"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="gdrive-info">
+          <div class="gdrive-title">
+            <div class="gdrive-icon">S</div>
+            Formato 06 "Sustento de Cambio de EETT"
           </div>
           <div class="gdrive-desc">Plantilla para solicitar el cambio de una EETT en consultorías de equipamiento.</div>
         </div>
       </div>
+    </div>
+  </div>
 
-      <div class="gdrive-card">
-        <div class="gdrive-preview">
-          <div class="mock-doc">
-            <div class="mock-header" style="width: 70%; background:#d1d5db; height: 8px;"></div>
-            <div class="mock-header" style="width: 50%; background:#d1d5db; height: 8px;"></div>
-            <div style="height: 10px;"></div>
-            <div class="mock-row"><div class="mock-cell" style="background:#e5e7eb"></div></div>
-            <div class="mock-row"><div class="mock-cell" style="background:#e5e7eb"></div></div>
-            <div class="mock-row"><div class="mock-cell" style="background:#e5e7eb"></div></div>
-            <div class="mock-row"><div class="mock-cell" style="background:#e5e7eb; width:40%; flex:none;"></div></div>
-          </div>
+  <!-- TAB SÍLABO DE CONCEPTOS -->
+  <div id="tab-syll">
+    <div class="sec-head">
+      <div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="pill pill-s">Información Técnica</span>
+          <span class="sec-title">Sílabo de Conceptos Eléctricos</span>
         </div>
-        <div class="gdrive-info">
-          <div class="gdrive-title">
-            <div class="gdrive-icon doc">W</div>
-            Formato "Sustento de Cambio de Equipo"
-          </div>
-          <div class="gdrive-desc">Plantilla para ofrecer otro modelo de bien con respecto al originalmente ofertado.</div>
+        <p class="sec-sub" style="font-size:14px; margin-top:6px;">Guía rápida de estándares internacionales, tomas y magnitudes eléctricas.</p>
+      </div>
+    </div>
+
+    <h3 style="font-size: 16px; margin-bottom: 20px; color: var(--text);">🔌 Estándares Mundiales de Tomas y Enchufes</h3>
+    <div class="plug-grid">
+      <!-- Tipo A: placa octagonal, 2 ranuras verticales (neutro izq. más largo) -->
+      <div class="plug-card">
+        <svg viewBox="0 0 80 80" width="80" height="80" class="plug-img" style="border:none; background:transparent;">
+          <rect x="6" y="6" width="68" height="68" rx="11" fill="#ffffff" stroke="#dde2e8" stroke-width="1.5"/>
+          <polygon points="29,18 51,18 62,29 62,51 51,62 29,62 18,51 18,29" fill="#f4f6f9" stroke="#cdd3db" stroke-width="1.5"/>
+          <rect x="32" y="28" width="4" height="25" rx="2" fill="#2b2f36"/>
+          <rect x="44" y="31" width="4" height="19" rx="2" fill="#2b2f36"/>
+        </svg>
+        <div class="plug-label">Tipo A</div>
+        <div class="plug-sub">Norteamérica / Japón</div>
+      </div>
+
+      <!-- Tipo B: octagonal, 2 ranuras verticales (neutro izq. más largo) + orificio redondo de tierra abajo -->
+      <div class="plug-card">
+        <svg viewBox="0 0 80 80" width="80" height="80" class="plug-img" style="border:none; background:transparent;">
+          <rect x="6" y="6" width="68" height="68" rx="11" fill="#ffffff" stroke="#dde2e8" stroke-width="1.5"/>
+          <polygon points="29,16 51,16 62,27 62,53 51,64 29,64 18,53 18,27" fill="#f4f6f9" stroke="#cdd3db" stroke-width="1.5"/>
+          <rect x="32" y="24" width="4" height="21" rx="2" fill="#2b2f36"/>
+          <rect x="44" y="27" width="4" height="15" rx="2" fill="#2b2f36"/>
+          <circle cx="40" cy="53" r="4.5" fill="#2b2f36"/>
+        </svg>
+        <div class="plug-label">Tipo B</div>
+        <div class="plug-sub">USA (con Tierra)</div>
+      </div>
+
+      <!-- Tipo C: cara circular, 2 orificios redondos (Europlug) -->
+      <div class="plug-card">
+        <svg viewBox="0 0 80 80" width="80" height="80" class="plug-img" style="border:none; background:transparent;">
+          <rect x="6" y="6" width="68" height="68" rx="11" fill="#ffffff" stroke="#dde2e8" stroke-width="1.5"/>
+          <circle cx="40" cy="40" r="23" fill="#f4f6f9" stroke="#cdd3db" stroke-width="1.5"/>
+          <circle cx="40" cy="40" r="15" fill="none" stroke="#e4e8ed" stroke-width="1.5"/>
+          <circle cx="32" cy="40" r="4" fill="#2b2f36"/>
+          <circle cx="48" cy="40" r="4" fill="#2b2f36"/>
+        </svg>
+        <div class="plug-label">Tipo C</div>
+        <div class="plug-sub">Europlug (Estándar)</div>
+      </div>
+
+      <!-- Tipo D: cara cuadrada, 3 orificios redondos (tierra grande arriba) -->
+      <div class="plug-card">
+        <svg viewBox="0 0 80 80" width="80" height="80" class="plug-img" style="border:none; background:transparent;">
+          <rect x="6" y="6" width="68" height="68" rx="11" fill="#ffffff" stroke="#dde2e8" stroke-width="1.5"/>
+          <rect x="18" y="18" width="44" height="44" rx="5" fill="#f4f6f9" stroke="#cdd3db" stroke-width="1.5"/>
+          <circle cx="40" cy="29" r="5" fill="#2b2f36"/>
+          <circle cx="31" cy="50" r="4" fill="#2b2f36"/>
+          <circle cx="49" cy="50" r="4" fill="#2b2f36"/>
+        </svg>
+        <div class="plug-label">Tipo D</div>
+        <div class="plug-sub">India / Sudáfrica</div>
+      </div>
+
+      <!-- Tipo F: Schuko - cara circular, 2 orificios + pinzas de tierra arriba/abajo -->
+      <div class="plug-card">
+        <svg viewBox="0 0 80 80" width="80" height="80" class="plug-img" style="border:none; background:transparent;">
+          <rect x="6" y="6" width="68" height="68" rx="11" fill="#ffffff" stroke="#dde2e8" stroke-width="1.5"/>
+          <circle cx="40" cy="40" r="23" fill="#f4f6f9" stroke="#cdd3db" stroke-width="1.5"/>
+          <circle cx="40" cy="40" r="16" fill="none" stroke="#e4e8ed" stroke-width="1.5"/>
+          <rect x="34" y="19.5" width="12" height="3.5" rx="1.5" fill="#b4b9c0"/>
+          <rect x="34" y="57" width="12" height="3.5" rx="1.5" fill="#b4b9c0"/>
+          <circle cx="31" cy="40" r="4" fill="#2b2f36"/>
+          <circle cx="49" cy="40" r="4" fill="#2b2f36"/>
+        </svg>
+        <div class="plug-label">Tipo F (Schuko)</div>
+        <div class="plug-sub">Europa (Seguridad)</div>
+      </div>
+
+      <!-- Tipo G (BS 1363): cuadrada, tierra vertical arriba (ancha), neutro/fase abajo con leve ángulo -->
+      <div class="plug-card">
+        <svg viewBox="0 0 80 80" width="80" height="80" class="plug-img" style="border:none; background:transparent;">
+          <rect x="6" y="6" width="68" height="68" rx="11" fill="#ffffff" stroke="#dde2e8" stroke-width="1.5"/>
+          <rect x="17" y="17" width="46" height="46" rx="5" fill="#f4f6f9" stroke="#cdd3db" stroke-width="1.5"/>
+          <!-- Tierra: ranura vertical prominente en centro superior -->
+          <rect x="36" y="22" width="8" height="15" rx="2" fill="#2b2f36"/>
+          <!-- Neutro (izq. inferior): ranura ancha con leve rotación hacia afuera -->
+          <rect x="20" y="44" width="15" height="7" rx="2" fill="#2b2f36" transform="rotate(-9 27.5 47.5)"/>
+          <!-- Fase (der. inferior): ranura ancha con leve rotación hacia afuera -->
+          <rect x="45" y="44" width="15" height="7" rx="2" fill="#2b2f36" transform="rotate(9 52.5 47.5)"/>
+        </svg>
+        <div class="plug-label">Tipo G</div>
+        <div class="plug-sub">Reino Unido / HK</div>
+      </div>
+
+      <!-- Tipo I (AS/NZS 3112): cara cuadrada, 2 ranuras en V superior + tierra vertical inferior -->
+      <div class="plug-card">
+        <svg viewBox="0 0 80 80" width="80" height="80" class="plug-img" style="border:none; background:transparent;">
+          <rect x="6" y="6" width="68" height="68" rx="11" fill="#ffffff" stroke="#dde2e8" stroke-width="1.5"/>
+          <rect x="16" y="16" width="48" height="48" rx="7" fill="#f4f6f9" stroke="#cdd3db" stroke-width="1.5"/>
+          <!-- Ranura izquierda (V brazo izq.), inclinada ~30° hacia el centro -->
+          <rect x="27" y="24" width="5" height="15" rx="2" fill="#2b2f36" transform="rotate(-30 29.5 31.5)"/>
+          <!-- Ranura derecha (V brazo der.), inclinada ~30° hacia el centro -->
+          <rect x="48" y="24" width="5" height="15" rx="2" fill="#2b2f36" transform="rotate(30 50.5 31.5)"/>
+          <!-- Tierra vertical en centro inferior -->
+          <rect x="37.5" y="46" width="5" height="14" rx="2" fill="#2b2f36"/>
+        </svg>
+        <div class="plug-label">Tipo I</div>
+        <div class="plug-sub">Australia / Argentina</div>
+      </div>
+
+      <!-- Tipo L: cara rectangular, 3 orificios redondos en línea (Italia) -->
+      <div class="plug-card">
+        <svg viewBox="0 0 80 80" width="80" height="80" class="plug-img" style="border:none; background:transparent;">
+          <rect x="6" y="6" width="68" height="68" rx="11" fill="#ffffff" stroke="#dde2e8" stroke-width="1.5"/>
+          <rect x="16" y="30" width="48" height="20" rx="5" fill="#f4f6f9" stroke="#cdd3db" stroke-width="1.5"/>
+          <circle cx="28" cy="40" r="3.5" fill="#2b2f36"/>
+          <circle cx="40" cy="40" r="3.5" fill="#2b2f36"/>
+          <circle cx="52" cy="40" r="3.5" fill="#2b2f36"/>
+        </svg>
+        <div class="plug-label">Tipo L</div>
+        <div class="plug-sub">Italia / Chile</div>
+      </div>
+
+      <!-- Tipo N (NBR 14136): cara circular, 2 orificios redondos arriba + tierra redonda abajo -->
+      <div class="plug-card">
+        <svg viewBox="0 0 80 80" width="80" height="80" class="plug-img" style="border:none; background:transparent;">
+          <rect x="6" y="6" width="68" height="68" rx="11" fill="#ffffff" stroke="#dde2e8" stroke-width="1.5"/>
+          <circle cx="40" cy="40" r="25" fill="#f4f6f9" stroke="#cdd3db" stroke-width="1.5"/>
+          <!-- Fase (izq. superior) -->
+          <circle cx="31" cy="34" r="4" fill="#2b2f36"/>
+          <!-- Neutro (der. superior) -->
+          <circle cx="49" cy="34" r="4" fill="#2b2f36"/>
+          <!-- Tierra (centro inferior) -->
+          <circle cx="40" cy="50" r="4" fill="#2b2f36"/>
+        </svg>
+        <div class="plug-label">Tipo N</div>
+        <div class="plug-sub">Brasil / Sudáfrica</div>
+      </div>
+    </div>
+
+    <div class="grid-container" style="margin-bottom: 40px;">
+      <div class="card">
+        <div class="card-title">⚡ Potencia Eléctrica (P)</div>
+        <div class="card-desc">
+          Trabajo realizado por unidad de tiempo. Se mide en <strong>Watts (W)</strong>.<br>
+          Fórmula: <span class="formula">P = V × I</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">📈 Tensión / Voltaje (V)</div>
+        <div class="card-desc">
+          Diferencia de potencial que impulsa los electrones. Se mide en <strong>Voltios (V)</strong>.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">🌊 Intensidad / Corriente (I)</div>
+        <div class="card-desc">
+          Flujo de carga eléctrica a través de un conductor. Se mide en <strong>Amperios (A)</strong>.
         </div>
       </div>
     </div>
+
+    <h3 style="font-size: 16px; margin-bottom: 10px; color: var(--text);">🌍 Voltaje y Frecuencia por Región</h3>
+    <table class="data-table">
+      <thead>
+        <tr><th>Región / País</th><th>Voltaje (V)</th><th>Frecuencia (Hz)</th><th>Tipo de Enchufe común</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Perú</td><td>220V</td><td><span class="badge b-green">60 Hz</span></td><td>A, B, C</td></tr>
+        <tr><td>EE.UU / Canadá</td><td>120V</td><td><span class="badge b-green">60 Hz</span></td><td>A, B</td></tr>
+        <tr><td>Europa (UE)</td><td>230V</td><td><span class="badge b-blue">50 Hz</span></td><td>C, E, F</td></tr>
+        <tr><td>Reino Unido</td><td>230V</td><td><span class="badge b-blue">50 Hz</span></td><td>G</td></tr>
+        <tr><td>China / Australia</td><td>220V - 240V</td><td><span class="badge b-blue">50 Hz</span></td><td>A, C, I</td></tr>
+        <tr><td>Japón</td><td>100V</td><td><span class="badge b-blue">50/60 Hz</span></td><td>A, B</td></tr>
+      </tbody>
+    </table>
   </div>
 
   <!-- ELEMENTOS FLOTANTES -->
@@ -332,7 +700,7 @@
     <h4>Referencias</h4>
     <div class="li"><div class="ls" style="background:#a8dfd6;border:1.5px solid #0e9f8e"></div><span>Proceso principal</span></div>
     <div class="li"><div class="ls" style="background:#b8d4f0;border:1.5px solid #4a8fc7"></div><span>Actividad / tarea</span></div>
-    <div class="li"><div class="ls" style="background:#c8d0e0;border:1.5px solid #8898bc"></div><span>Resultado final</span></div>
+    <div class="li"><div class="ls" style="background:#c8d0e0;border:1.5px solid #8898bc;border-radius:6px"></div><span>Inicio / Fin (terminador)</span></div>
     <div class="li"><div class="ld"></div><span>Decisión</span></div>
   </div>
 
@@ -365,10 +733,13 @@ function drawNode(svg, x, y, w, h, lines, style, tip='') {
     blue:  {fill:'#b8d4f0', stroke:'#4a8fc7'},
     teal:  {fill:'#a8dfd6', stroke:'#0e9f8e'},
     gray:  {fill:'#c8d0e0', stroke:'#8898bc'},
+    term:  {fill:'#c8d0e0', stroke:'#8898bc'},
   };
   const c = colors[style] || colors.blue;
 
-  const r = el('rect', {x, y, width:w, height:h, rx:'7', ry:'7',
+  // El terminador (Inicio / Fin) se dibuja como rectángulo de extremos redondeados (píldora)
+  const rad = (style === 'term') ? h/2 : 7;
+  const r = el('rect', {x, y, width:w, height:h, rx:rad, ry:rad,
     fill:c.fill, stroke:c.stroke, 'stroke-width':'1.5'});
   g.appendChild(r);
 
@@ -395,6 +766,7 @@ function drawNode(svg, x, y, w, h, lines, style, tip='') {
   svg.appendChild(g);
   return g;
 }
+
 
 function drawDiamond(svg, cx, cy, hw, hh, lines, tip='') {
   const g = el('g');
@@ -477,7 +849,7 @@ function buildCom() {
 
   const y1 = 90; // Bajamos la linea principal para dar mas espacio arriba
   
-  drawNode(svg, C1-70, y1-23, NW, NH, ['SOLICITUD DE', 'COTIZACIÓN'], 'blue');
+  drawNode(svg, C1-70, y1-23, NW, NH, ['SOLICITUD DE', 'COTIZACIÓN'], 'term');
   line(svg, C1+70, y1, C2-70, y1, A);
   
   drawNode(svg, C2-70, y1-23, NW, NH, ['REVISIÓN DE', 'DOCUMENTACIÓN'], 'blue');
@@ -500,7 +872,7 @@ function buildCom() {
   line(svg, C6+DW, y1, C7-70, y1, A);
   label(svg, C6+DW+20, y1-8, 'NO');
 
-  drawNode(svg, C7-70, y1-23, NW, NH, ['DESCARTE'], 'gray');
+  drawNode(svg, C7-70, y1-23, NW, NH, ['DESCARTE'], 'term');
 
   // LINEAS SUPERIORES DE 'NO' SEPARADAS
   path(svg, `M ${C4} ${y1-DH} L ${C4} 15 L ${C7} 15 L ${C7} ${y1-23}`, A);
@@ -590,7 +962,7 @@ function buildInge() {
   const C1=90, C2=280, C3=470, C4=660, C5=850, C6=1040, C7=1230, C8=1420;
   const AXIS = 130;
 
-  drawNode(svg, C1-70, 63-23, NW, NH, ['ADJUDICACIÓN', 'DE PROYECTO'], 'blue');
+  drawNode(svg, C1-70, 63-23, NW, NH, ['ADJUDICACIÓN', 'DE PROYECTO'], 'term');
   line(svg, C1+70, 63, C2-DW, 63, A);
 
   drawDiamond(svg, C2, 63, DW, DH, ['¿SE REQUIERE', 'APOYO POR PARTE', 'DE COMERCIAL?']);
@@ -608,7 +980,9 @@ function buildInge() {
   path(svg, `M ${AXIS} 280 L ${C2-70} 280`, A);
   drawNode(svg, C2-70, 280-23, NW, NH, ['DESGLOSE DE PRODUCTOS', 'Y ACCESORIOS'], 'teal');
   line(svg, C2+70, 280, C3-70, 280, A);
-  drawNode(svg, C3-70, 280-23, NW, NH, ['ENVÍO A CALIDAD'], 'blue');
+  drawNode(svg, C3-70, 280-23, NW, NH, ['DESARROLLO DE', 'DESGLOSE'], 'blue');
+  line(svg, C3+70, 280, C4-70, 280, A);
+  drawNode(svg, C4-70, 280-23, NW, NH, ['ENVÍO A', 'PLANEAMIENTO'], 'blue');
 
   path(svg, `M ${AXIS} 440 L ${C2-70} 440`, A);
   drawNode(svg, C2-70, 440-23, NW, NH, ['VALIDACIÓN TÉCNICA'], 'teal');
@@ -645,6 +1019,16 @@ function buildInge() {
 
   path(svg, `M ${C7+70} 543 L ${C8} 543 L ${C8} 463`, A);
   drawNode(svg, C8-70, 440-23, NW, NH, ['APROBACIÓN DE COMPRA'], 'blue');
+
+  // ── ¿CAMBIA EL EQUIPO? (después de Aprobación de Compra) ──────────
+  const K1 = 1620;   // rombo ¿CAMBIA EL EQUIPO?
+  const K2 = 1850;   // ACTUALIZACIÓN DE DESGLOSE (rama SÍ)
+  line(svg, C8+70, 440, K1-DW, 440, A);
+  drawDiamond(svg, K1, 440, DW, DH, ['¿CAMBIA EL', 'EQUIPO?']);
+
+  line(svg, K1+DW, 440, K2-80, 440, A);
+  label(svg, K1+DW+15, 432, 'SÍ');
+  drawNode(svg, K2-80, 440-23, 160, NH, ['ACTUALIZACIÓN DE', 'DESGLOSE'], 'blue');
 
   path(svg, `M ${AXIS} 660 L ${C2-70} 660`, A);
   drawNode(svg, C2-70, 660-23, NW, NH, ['EXTRACCIÓN DE', 'CARACTERÍSTICAS', 'TÉCNICAS'], 'teal');
@@ -684,10 +1068,7 @@ function buildInge() {
   path(svg, `M ${AXIS} 1060 L ${C2-70} 1060`, A);
   drawNode(svg, C2-70, 1060-23, NW, NH, ['LEVANTAMIENTO DE', 'OBSERVACIONES'], 'teal');
 
-  line(svg, C2+70, 1060, C3-70, 1060, A);
-  drawNode(svg, C3-70, 1060-23, NW, NH, ['COORDINACIÓN', 'CON CALIDAD'], 'blue');
-
-  line(svg, C3+70, 1060, C4-70, 1060, A);
+  line(svg, C2+70, 1060, C4-70, 1060, A);
   drawNode(svg, C4-70, 1060-23, NW+10, NH, ['REVISIÓN DE ALERTAS', 'ENVIADAS POR CALIDAD'], 'blue');
 
   line(svg, C4+80, 1060, C5-DW, 1060, A);
@@ -701,13 +1082,17 @@ function buildInge() {
   label(svg, C5+15, 1115, 'NO');
   drawNode(svg, C5-80, 1168-23, 160, 46, ['ADQUISICIÓN DE ACCESORIOS', 'PARA ASEGURAR EL', 'CUMPLIMIENTO'], 'blue');
 
-  line(svg, C5+80, 1168, C6-70, 1168, A);
-  drawNode(svg, C6-70, 1168-23, NW, NH, ['SOLICITUD DE', 'REQUERIMIENTO'], 'blue');
+  line(svg, C5+80, 1168, C6-80, 1168, A);
+  drawNode(svg, C6-80, 1168-23, 160, NH, ['ACTUALIZACIÓN DE', 'DESGLOSE'], 'blue');
 
-  line(svg, C6, 1145, C6, 1083, A);
+  line(svg, C6+80, 1168, C7-70, 1168, A);
+  drawNode(svg, C7-70, 1168-23, NW, NH, ['SOLICITUD DE', 'REQUERIMIENTO'], 'blue');
+
+  // SOLICITUD DE REQUERIMIENTO regresa a COORDINACIÓN CON COMPRAS
+  path(svg, `M ${C7} 1145 L ${C7} 1060 L ${C6+70} 1060`, A);
 
   path(svg, `M ${AXIS} 1260 L ${C2-70} 1260`, A);
-  drawNode(svg, C2-70, 1260-23, NW, NH, ['INSTALACIÓN'], 'teal');
+  drawNode(svg, C2-70, 1260-23, NW, NH, ['INSTALACIÓN'], 'term');
 }
 
 buildCom();
@@ -738,7 +1123,7 @@ function zoom(d){
 function resetView(){ sc=0.85; tx=20; ty=20; apply(); }
 
 wrap.addEventListener('mousedown',e=>{ 
-  if(e.button!==0 || e.target.closest('#tab-tpl')) return; 
+  if(e.button!==0 || e.target.closest('#tab-tpl') || e.target.closest('#tab-syll')) return;
   drag=true; sx=e.clientX; sy=e.clientY; stx=tx; sty=ty; e.preventDefault(); 
 });
 window.addEventListener('mousemove',e=>{ 
@@ -747,7 +1132,7 @@ window.addEventListener('mousemove',e=>{
 });
 window.addEventListener('mouseup',()=>drag=false);
 wrap.addEventListener('wheel',e=>{ 
-  if(document.getElementById('tab-tpl').style.display === 'block') return;
+  if(document.getElementById('tab-tpl').style.display === 'block' || document.getElementById('tab-syll').style.display === 'block') return;
   e.preventDefault(); 
   const d=e.deltaY<0?.1:-.1; 
   const r=wrap.getBoundingClientRect(); 
@@ -760,20 +1145,25 @@ function switchTab(id, btn) {
   document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
 
-  if (id === 'tpl') {
+  // Las pestañas de "scroll" (sin lienzo de flujo) son Plantillas y Sílabo
+  const scrollTabs = ['tpl', 'syll'];
+
+  // Ocultamos todas las vistas de scroll antes de decidir
+  document.getElementById('tab-tpl').style.display = 'none';
+  document.getElementById('tab-syll').style.display = 'none';
+
+  if (scrollTabs.includes(id)) {
     document.getElementById('canvas').style.display = 'none';
-    document.getElementById('topbar').style.display = 'none'; 
+    document.getElementById('topbar').style.display = 'none';
     document.getElementById('legend').style.display = 'none';
     document.getElementById('hint').style.display = 'none';
-    
-    document.getElementById('tab-tpl').style.display = 'block';
+
+    document.getElementById('tab-'+id).style.display = 'block';
   } else {
     document.getElementById('canvas').style.display = 'block';
     document.getElementById('topbar').style.display = 'flex';
     document.getElementById('legend').style.display = 'block';
     document.getElementById('hint').style.display = 'block';
-    
-    document.getElementById('tab-tpl').style.display = 'none';
 
     document.querySelectorAll('.flow').forEach(f=>f.classList.remove('active'));
     document.getElementById('tab-'+id).classList.add('active');
